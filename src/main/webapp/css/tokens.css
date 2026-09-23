@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* ==========================================================================
+     Cores Institucionais & Acentos (Figma: portal-robo)
+     ========================================================================== */
+  --color-primary: #0D734A;             /* Verde Principal IFMS */
+  --color-primary-hover: #059669;       /* Verde Esmeralda para Hover */
+  --color-primary-dark: #047857;        /* Verde Escuro de Ênfase */
+  --color-primary-light: #10B981;       /* Verde Claro / Sucesso */
+  --color-primary-subtle: rgba(13, 115, 74, 0.1); /* Fundo de Badges Verdes */
+
+  --color-secondary: #0A3663;           /* Azul Marinho IFMS */
+  --color-danger: #D32F2F;              /* Vermelho IFMS (Botão de Login/Ação) */
+  --color-danger-dark: #B73636;         /* Vermelho Hover */
+  --color-warning: #F59E0B;             /* Amarelo/Âmbar (Troféus e Destaques) */
+  --color-info: #0284C7;                /* Azul Informativo */
+
+  /* ==========================================================================
+     Neutros, Superfícies e Textos (Escala Slate)
+     ========================================================================== */
+  --color-bg-body: #F8FAFC;             /* Fundo da Página (Slate 50) */
+  --color-bg-card: #FFFFFF;             /* Superfície de Cards e Modais */
+  --color-bg-muted: #F1F5F9;            /* Fundo de Seções Secundárias (Slate 100) */
+
+  --color-border-subtle: #E2E8F0;       /* Bordas de Cards e Inputs (Slate 200) */
+  --color-border-strong: #CBD5E1;       /* Bordas de Foco/Hover (Slate 300) */
+
+  --color-text-primary: #0F172A;        /* Títulos e Textos Principais (Slate 900) */
+  --color-text-secondary: #64748B;      /* Textos de Apoio e Ícones (Slate 500) */
+  --color-text-placeholder: #757575;    /* Placeholders em Formulários */
+  --color-text-inverse: #FFFFFF;        /* Texto em Fundo Escuro/Verde */
+
+  /* ==========================================================================
+     Tipografia (Plus Jakarta Sans)
+     ========================================================================== */
+  --font-family-base: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --font-size-display: 44px;
+  --font-size-h1: 35px;
+  --font-size-h2: 30px;
+  --font-size-h3: 24px;
+  --font-size-h4: 18px;
+  --font-size-body-lg: 16px;
+  --font-size-body: 14px;
+  --font-size-small: 13px;
+  --font-size-label: 12px;
+  --font-size-micro: 10px;
+
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --line-height-display: 51px;
+  --line-height-h1: 56px;
+  --line-height-h2: 47px;
+  --line-height-h3: 38px;
+  --line-height-h4: 28px;
+  --line-height-body: 22px;
+  --line-height-small: 20px;
+
+  /* ==========================================================================
+     Espaçamentos (Grid de 4px / 8px)
+     ========================================================================== */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;                      /* Espaçamento mais frequente do layout */
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-15: 60px;
+
+  /* ==========================================================================
+     Bordas Arredondadas (Border Radius)
+     ========================================================================== */
+  --radius-sm: 6px;                      /* Inputs e Botões Padrão */
+  --radius-md: 8px;                      /* Badges e Tags */
+  --radius-lg: 10px;                     /* Inputs Destacados */
+  --radius-xl: 12px;                     /* Cards de Projetos/Atividades */
+  --radius-2xl: 16px;                    /* Containers e Modais */
+  --radius-3xl: 20px;                    /* Banners e Seções Especiais */
+  --radius-full: 9999px;                 /* Avatares e Pílulas */
+
+  /* ==========================================================================
+     Sombras e Elevação (Box Shadows)
+     ========================================================================== */
+  --shadow-sm: 0px 1px 3px 0px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0px 8px 16px 0px rgba(0, 0, 0, 0.06);
+  --shadow-card-navy: 0px 4px 12px -2px rgba(10, 54, 99, 0.08);
+  --shadow-trophy: 0px 4px 12px 0px rgba(245, 158, 11, 0.30);
+}
