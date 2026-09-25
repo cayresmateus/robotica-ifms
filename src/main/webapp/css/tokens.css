@@ -552,11 +552,11 @@ main.main-content {
 
 /* Footer */
 .footer-portal {
-  background-color: var(--color-secondary);
+  background-color: #0D734A;
   color: #E2E8F0;
-  padding: 40px 0 24px;
+  padding: 44px 0 24px;
   margin-top: var(--space-10);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .footer-portal a {
@@ -566,7 +566,8 @@ main.main-content {
 }
 
 .footer-portal a:hover {
-  color: var(--color-primary-light);
+  color: #FFFFFF;
+  text-decoration: underline;
 }
 
 .instagram-btn {
