@@ -1,11 +1,15 @@
 package robotica.ifms.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Estudante {
 
 	private Long id;
 	private String nome;
 	private String minibio;
 	private String foto;
+	private List<Participacao> participacoes = new ArrayList<>();
 
 	public Estudante() {
 	}
@@ -47,5 +51,13 @@ public class Estudante {
 
 	public void setFoto(String foto) {
 		this.foto = foto;
+	}
+
+	public List<Participacao> getParticipacoes() {
+		return participacoes;
+	}
+
+	public void setParticipacoes(List<Participacao> participacoes) {
+		this.participacoes = participacoes != null ? participacoes : new ArrayList<>();
 	}
 }

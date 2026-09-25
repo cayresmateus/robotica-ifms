@@ -1,6 +1,9 @@
 package robotica.ifms.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Atividade {
 
@@ -12,6 +15,8 @@ public class Atividade {
 	private LocalDate dataFim;
 	private String situacao;
 	private Coordenador coordenador;
+	private List<PeriodoLetivo> periodos = new ArrayList<>();
+	private List<Participacao> participacoes = new ArrayList<>();
 
 	public Atividade() {
 	}
@@ -89,5 +94,28 @@ public class Atividade {
 
 	public void setCoordenador(Coordenador coordenador) {
 		this.coordenador = coordenador;
+	}
+
+	public List<PeriodoLetivo> getPeriodos() {
+		return periodos;
+	}
+
+	public void setPeriodos(List<PeriodoLetivo> periodos) {
+		this.periodos = periodos != null ? periodos : new ArrayList<>();
+	}
+
+	public List<Participacao> getParticipacoes() {
+		return participacoes;
+	}
+
+	public void setParticipacoes(List<Participacao> participacoes) {
+		this.participacoes = participacoes != null ? participacoes : new ArrayList<>();
+	}
+
+	public String getPeriodosFormatados() {
+		if (periodos == null || periodos.isEmpty()) {
+			return "";
+		}
+		return periodos.stream().map(PeriodoLetivo::getRotulo).collect(Collectors.joining(", "));
 	}
 }
