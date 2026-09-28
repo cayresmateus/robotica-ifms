@@ -5,7 +5,9 @@ CREATE TABLE IF NOT EXISTS coordenador (
     id       BIGSERIAL PRIMARY KEY,
     nome     VARCHAR(150) NOT NULL,
     minibio  TEXT,
-    foto     VARCHAR(500)
+    foto     VARCHAR(500),
+    email    VARCHAR(150) UNIQUE,
+    senha    VARCHAR(255)
 );
 
 CREATE TABLE IF NOT EXISTS estudante (
@@ -58,10 +60,10 @@ CREATE TABLE IF NOT EXISTS conquista (
 );
 
 -- Carga inicial de dados representativos (Memória do Laboratório de Robótica)
-INSERT INTO coordenador (id, nome, minibio, foto) VALUES
-    (1, 'Fábio Luiz Faria da Silva', 'Docente responsável pela orientação de projetos de ensino, pesquisa e extensão, garantindo a infraestrutura técnica e o suporte pedagógico aos estudantes do IFMS Campus Campo Grande.', 'fabio.jpg'),
-    (2, 'Rodrigo Cardoso', 'Docente responsável pela orientação de projetos de ensino, pesquisa e extensão, garantindo a infraestrutura técnica e o suporte pedagógico aos estudantes do IFMS Campus Campo Grande.', 'rodrigo.jpg')
-    ON CONFLICT (id) DO NOTHING;
+INSERT INTO coordenador (id, nome, minibio, foto, email, senha) VALUES
+(1, 'Fábio Luiz Faria da Silva', 'Docente responsável pela orientação de projetos de ensino, pesquisa e extensão, garantindo a infraestrutura técnica e o suporte pedagógico aos estudantes do IFMS Campus Campo Grande.', 'fabio.jpg', 'fabio.silva@ifms.edu.br', '1234'),
+(2, 'Rodrigo Cardoso', 'Docente responsável pela orientação de projetos de ensino, pesquisa e extensão, garantindo a infraestrutura técnica e o suporte pedagógico aos estudantes do IFMS Campus Campo Grande.', 'rodrigo.jpg', 'rodrigo.cardoso@ifms.edu.br', '1234')
+ON CONFLICT (id) DO NOTHING;
 
 INSERT INTO periodo_letivo (id, ano, semestre) VALUES
     (1, 2025, 1),

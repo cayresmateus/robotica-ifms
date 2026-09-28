@@ -32,4 +32,4 @@ public class FiltroAutenticacao implements Filter {
             httpResponse.sendRedirect(httpRequest.getContextPath() + "/login");
         }
     }
-}ß
+}
