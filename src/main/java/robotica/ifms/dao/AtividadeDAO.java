@@ -20,14 +20,15 @@ import robotica.ifms.model.PeriodoLetivo;
 
 public class AtividadeDAO {
 
-	private static final String SELECT_BASE = 
-		"SELECT a.id, a.titulo, a.tipo, a.descricao, a.data_inicio, a.data_fim, a.situacao, " +
-		"c.id AS coord_id, c.nome AS coord_nome, c.minibio AS coord_minibio, c.foto AS coord_foto, " +
-		"p.id AS per_id, p.ano AS per_ano, p.semestre AS per_semestre " +
-		"FROM atividade a " +
-		"LEFT JOIN coordenador c ON a.coordenador_id = c.id " +
-		"LEFT JOIN atividade_periodo ap ON a.id = ap.atividade_id " +
-		"LEFT JOIN periodo_letivo p ON ap.periodo_id = p.id ";
+	private static final String SELECT_BASE =
+			"SELECT a.id, a.titulo, a.tipo, a.descricao, a.data_inicio, a.data_fim, a.situacao, " +
+					"c.id AS coord_id, c.nome AS coord_nome, c.minibio AS coord_minibio, c.foto AS coord_foto, " +
+					"c.email AS coord_email, c.senha AS coord_senha, " +
+					"p.id AS per_id, p.ano AS per_ano, p.semestre AS per_semestre " +
+					"FROM atividade a " +
+					"LEFT JOIN coordenador c ON a.coordenador_id = c.id " +
+					"LEFT JOIN atividade_periodo ap ON a.id = ap.atividade_id " +
+					"LEFT JOIN periodo_letivo p ON ap.periodo_id = p.id ";
 
 	private static final String INSERT = 
 		"INSERT INTO atividade (titulo, tipo, descricao, data_inicio, data_fim, situacao, coordenador_id) " +
@@ -165,7 +166,9 @@ public class AtividadeDAO {
 								coordId,
 								rs.getString("coord_nome"),
 								rs.getString("coord_minibio"),
-								rs.getString("coord_foto")
+								rs.getString("coord_foto"),
+								rs.getString("coord_email"),
+								rs.getString("coord_senha")
 							);
 							atividade.setCoordenador(c);
 						}

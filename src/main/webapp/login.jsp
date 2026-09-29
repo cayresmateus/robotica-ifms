@@ -41,39 +41,41 @@
 		</c:if>
 
 		<!-- Formulário de Autenticação (Figma #1012:687) -->
-		<form action="${pageContext.request.contextPath}/login" method="post" class="text-start">
-			<!-- Campo: E-mail Institucional -->
-			<div class="mb-3">
-				<label for="email" class="form-label-portal text-uppercase" style="font-size: 11.5px; letter-spacing: 0.04em;">
-					<fmt:message key="login.label.email" />
-				</label>
-				<div class="input-group">
-					<span class="input-group-text bg-white border-end-0 text-secondary" style="border-color: var(--color-border-subtle);">
-						<i class="fa-regular fa-envelope"></i>
-					</span>
-					<input type="email" id="email" name="email" class="form-control form-control-portal border-start-0 ps-0" placeholder="usuario@ifms.edu.br" value="${param.email != null ? param.email : 'admin@ifms.edu.br'}" required>
-				</div>
-			</div>
+        <form action="${pageContext.request.contextPath}/login" method="post" class="text-start">
+            <!-- Campo: E-mail Institucional -->
+            <div class="mb-3">
+               <label for="email" class="form-label-portal text-uppercase" style="font-size: 11.5px; letter-spacing: 0.04em;">
+                  <fmt:message key="login.label.email" />
+               </label>
+               <div class="input-group">
+                  <span class="input-group-text bg-white border-end-0 text-secondary" style="border-color: var(--color-border-subtle);">
+                     <i class="fa-regular fa-envelope"></i>
+                  </span>
+                  <!-- Removido o admin padrão, mantendo o param.email para conveniência -->
+                  <input type="email" id="email" name="email" class="form-control form-control-portal border-start-0 ps-0" placeholder="usuario@ifms.edu.br" value="${param.email}" required>
+               </div>
+            </div>
 
-			<!-- Campo: Senha -->
-			<div class="mb-4">
-				<label for="senha" class="form-label-portal text-uppercase" style="font-size: 11.5px; letter-spacing: 0.04em;">
-					<fmt:message key="login.label.senha" />
-				</label>
-				<div class="input-group">
-					<span class="input-group-text bg-white border-end-0 text-secondary" style="border-color: var(--color-border-subtle);">
-						<i class="fa-solid fa-lock"></i>
-					</span>
-					<input type="password" id="senha" name="senha" class="form-control form-control-portal border-start-0 ps-0" placeholder="••••••••" value="admin123" required>
-				</div>
-			</div>
+            <!-- Campo: Senha -->
+            <div class="mb-4">
+               <label for="senha" class="form-label-portal text-uppercase" style="font-size: 11.5px; letter-spacing: 0.04em;">
+                  <fmt:message key="login.label.senha" />
+               </label>
+               <div class="input-group">
+                  <span class="input-group-text bg-white border-end-0 text-secondary" style="border-color: var(--color-border-subtle);">
+                     <i class="fa-solid fa-lock"></i>
+                  </span>
+                  <!-- Removido o value="admin123" para que o campo venha sempre vazio -->
+                  <input type="password" id="senha" name="senha" class="form-control form-control-portal border-start-0 ps-0" placeholder="••••••••" required>
+               </div>
+            </div>
 
-			<!-- Botão de Acesso Vermelho IFMS -->
-			<button type="submit" class="btn-login-red mb-3">
-				<i class="fa-solid fa-arrow-right-to-bracket"></i>
-				<span><fmt:message key="login.btn.entrar" /></span>
-			</button>
-		</form>
+            <!-- Botão de Acesso Vermelho IFMS -->
+            <button type="submit" class="btn-login-red mb-3">
+               <i class="fa-solid fa-arrow-right-to-bracket"></i>
+               <span><fmt:message key="login.btn.entrar" /></span>
+            </button>
+        </form>
 
 		<!-- Link de Retorno à Home (Figma #1012:708) -->
 		<div class="pt-2">
@@ -83,6 +85,5 @@
 			</a>
 		</div>
 	</div>
-
 </body>
 </html>

@@ -132,7 +132,6 @@
 								</div>
 							</c:forEach>
 						</div>
-						<span class="small text-muted mt-1 d-block">Uma atividade pode ocorrer em um ou mais semestres.</span>
 					</div>
 
 					<!-- Descrição -->

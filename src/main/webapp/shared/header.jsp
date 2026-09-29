@@ -57,35 +57,55 @@
 				</div>
 
 				<!-- Botão de Gestão Vermelho IFMS (Figma #1001:285) -->
-				<div class="btn-group">
-					<a href="${pageContext.request.contextPath}/login" class="btn-portal-danger py-2 px-3 fw-bold" style="border-radius: 8px; background-color: var(--color-danger-dark); box-shadow: 0 2px 8px rgba(183, 54, 54, 0.3);">
-						<i class="fa-solid fa-lock fa-sm"></i>
-						<span><fmt:message key="nav.admin" /></span>
-					</a>
-					<button type="button" class="btn btn-sm dropdown-toggle dropdown-toggle-split text-white" style="background-color: var(--color-danger-dark); border-left: 1px solid rgba(255,255,255,0.3); border-radius: 0 8px 8px 0;" data-bs-toggle="dropdown" aria-expanded="false">
-						<span class="visually-hidden">Toggle Dropdown</span>
-					</button>
-					<ul class="dropdown-menu dropdown-menu-end shadow-sm" style="border-radius: var(--radius-md); font-size: 13px;">
-						<li>
-							<a class="dropdown-item py-2" href="${pageContext.request.contextPath}/admin/estudantes?acao=listar">
-								<i class="fa-solid fa-users me-2 text-primary"></i>
-								<fmt:message key="nav.admin.estudantes" />
-							</a>
-						</li>
-						<li>
-							<a class="dropdown-item py-2" href="${pageContext.request.contextPath}/admin/atividades?acao=listar">
-								<i class="fa-solid fa-list-check me-2 text-success"></i>
-								<fmt:message key="nav.admin.atividades" />
-							</a>
-						</li>
-						<li>
-							<a class="dropdown-item py-2" href="${pageContext.request.contextPath}/admin/participacoes?acao=listar">
-								<i class="fa-solid fa-handshake me-2 text-warning"></i>
-								<fmt:message key="nav.admin.participacoes" />
-							</a>
-						</li>
-					</ul>
-				</div>
+                <!-- CONTROLE DE AUTENTICAÇÃO: Só exibe opções de admin e sair se estiver logado -->
+                             <c:choose>
+                                <c:when test="${not empty sessionScope.coordenadorLogado}">
+                                   <!-- Botão de Gestão Vermelho IFMS + Opções de Admin -->
+                                   <div class="btn-group">
+                                      <a href="${pageContext.request.contextPath}/gestao.jsp" class="btn-portal-danger py-2 px-3 fw-bold text-decoration-none" style="border-radius: 8px 0 0 8px; background-color: var(--color-danger-dark); box-shadow: 0 2px 8px rgba(183, 54, 54, 0.3); color: white;">
+                                         <i class="fa-solid fa-lock-open fa-sm"></i>
+                                         <span><fmt:message key="nav.admin" /></span>
+                                      </a>
+                                      <button type="button" class="btn btn-sm dropdown-toggle dropdown-toggle-split text-white" style="background-color: var(--color-danger-dark); border-left: 1px solid rgba(255,255,255,0.3); border-radius: 0 8px 8px 0;" data-bs-toggle="dropdown" aria-expanded="false">
+                                         <span class="visually-hidden">Toggle Dropdown</span>
+                                      </button>
+                                      <ul class="dropdown-menu dropdown-menu-end shadow-sm" style="border-radius: var(--radius-md); font-size: 13px;">
+                                         <li>
+                                            <a class="dropdown-item py-2" href="${pageContext.request.contextPath}/admin/estudantes?acao=listar">
+                                               <i class="fa-solid fa-users me-2 text-primary"></i>
+                                               <fmt:message key="nav.admin.estudantes" />
+                                            </a>
+                                         </li>
+                                         <li>
+                                            <a class="dropdown-item py-2" href="${pageContext.request.contextPath}/admin/atividades?acao=listar">
+                                               <i class="fa-solid fa-list-check me-2 text-success"></i>
+                                               <fmt:message key="nav.admin.atividades" />
+                                            </a>
+                                         </li>
+                                         <li>
+                                            <a class="dropdown-item py-2" href="${pageContext.request.contextPath}/admin/participacoes?acao=listar">
+                                               <i class="fa-solid fa-handshake me-2 text-warning"></i>
+                                               <fmt:message key="nav.admin.participacoes" />
+                                            </a>
+                                         </li>
+                                         <li><hr class="dropdown-divider"></li>
+                                         <!-- Botão de Sair do Sistema -->
+                                         <li>
+                                            <a class="dropdown-item py-2 text-danger fw-bold" href="${pageContext.request.contextPath}/login?acao=logout">
+                                               <i class="fa-solid fa-right-from-bracket me-2"></i> Sair do Sistema
+                                            </a>
+                                         </li>
+                                      </ul>
+                                   </div>
+                                </c:when>
+                                <c:otherwise>
+                                   <!-- Se NÃO estiver logado, exibe apenas o botão de Entrar (Gestão) -->
+                                   <a href="${pageContext.request.contextPath}/login" class="btn-portal-danger py-2 px-3 fw-bold text-decoration-none" style="border-radius: 8px; background-color: var(--color-danger-dark); box-shadow: 0 2px 8px rgba(183, 54, 54, 0.3); color: white; font-size: 13px;">
+                                      <i class="fa-solid fa-lock fa-sm me-1"></i>
+                                      <span><fmt:message key="nav.admin" /></span>
+                                   </a>
+                                </c:otherwise>
+                             </c:choose>
 			</div>
 		</div>
 	</div>
