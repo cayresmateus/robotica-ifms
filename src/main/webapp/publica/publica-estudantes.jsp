@@ -53,17 +53,9 @@
 							<div class="col-md-6 col-lg-4">
 								<div class="card-student-figma">
 									<!-- Avatar Centralizado 80px -->
-									<c:choose>
-										<c:when test="${not empty est.foto && est.foto.startsWith('http')}">
-											<img src="${est.foto}" alt="${est.nome}" class="card-student-avatar">
-										</c:when>
-										<c:otherwise>
-											<div class="card-student-avatar-placeholder" title="Perfil sem foto">
-												<i class="fa-solid fa-user"></i>
-											</div>
-										</c:otherwise>
-									</c:choose>
-
+										<div class="card-student-avatar-placeholder" title="Perfil sem foto">
+											<i class="fa-solid fa-user"></i>
+										</div>
 									<!-- Nome do Estudante -->
 									<h4 class="student-name-figma">
 										<c:out value="${est.nome}" />
