@@ -72,7 +72,6 @@
 						</label>
 						<input type="text" class="form-control-portal" id="foto" name="foto" 
 						       placeholder="https://exemplo.com/foto.jpg ou nome_arquivo.jpg">
-						<span class="small text-muted mt-1 d-block">Pode ser uma URL de imagem externa ou caminho local.</span>
 					</div>
 
 					<!-- Botões de Ação -->
